@@ -9,7 +9,7 @@ RUN npm install --global snyk-broker
 WORKDIR /home/node
 USER node
 
-COPY . .
+COPY ./client-templates/gitlab/accept.json.sample /usr/local/lib/node_modules/snyk-broker/client-templates/gitlab/accept.json.sample
 
 # Generate default accept filter
 RUN broker init gitlab
