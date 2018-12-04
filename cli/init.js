@@ -16,9 +16,10 @@ module.exports = (args) => {
     if (files.indexOf(template) === -1) {
       throw new Error(`${template} is an invalid template name`);
     }
-
+console.log(dir);
     return fs.readdir(dir);
   }).then(files => {
+    console.log(files);
     // check if any of the files exist on disk already, and if so, abort.
     return Promise.all(files.map(file => {
       file = file.replace(/\.sample$/, '');
